@@ -92,16 +92,62 @@
             position: relative;
             z-index: 1;
         }
+.hero.mural {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  align-items: end;
+  color: var(--soft);
+}
 
-        .hero.mural {
-            position: relative;
-            overflow: hidden;
-            min-height: 120vh;
-            width: 100%;
-            display: grid;
-            align-items: end;
-            color: var(--soft);
-        }
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  z-index: 0;
+  opacity: 0.75;
+}
+
+.hero.mural > div {
+  position: relative;
+  z-index: 1;
+  padding: 60px 24px;
+}
+
+/* 📱 MÓVIL */
+@media (max-width: 600px) {
+  .hero.mural {
+    min-height: 50vh;         /* altura cómoda en móvil */
+  }
+
+  .bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;        /* cubre sin cortar */
+    object-position: center;  /* centrado */
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .cta-row {
+    flex-direction: column;
+  }
+
+  .btn {
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+
 
         .bg-video {
             position: absolute;
